@@ -598,8 +598,8 @@ a {
 }
 
 .calendar__summary {
-  margin: -0.25rem 0 var(--spacing-lg);
-  font-size: 0.9375rem;
+  margin: -0.25rem 0 var(--spacing-xl);
+  font-size: 0.875rem;
   font-weight: 300;
   line-height: 1.8;
   text-align: center;
