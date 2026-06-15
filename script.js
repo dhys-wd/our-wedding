@@ -121,7 +121,7 @@
     setMeta('name', 'description', m.description);
   }
 
-  /* ═══════════════════════════════════════════
+   /* ═══════════════════════════════════════════
      Curtain
      ═══════════════════════════════════════════ */
 
@@ -133,7 +133,7 @@
     // If useCurtain is false, skip the curtain entirely
     if (CONFIG.useCurtain === false) {
       curtain.style.display = 'none';
-      initPetals();
+      initFallingLeaves();
       return;
     }
 
@@ -144,7 +144,7 @@
       document.body.classList.remove('no-scroll');
       setTimeout(() => {
         curtain.classList.add('is-hidden');
-        initPetals();
+        initFallingLeaves();
       }, 1400);
     });
 
