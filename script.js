@@ -144,7 +144,7 @@
       document.body.classList.remove('no-scroll');
       setTimeout(() => {
         curtain.classList.add('is-hidden');
-        initFallingLeaves();
+        initPetals();
       }, 1400);
     });
 
