@@ -588,6 +588,7 @@ function initLocation() {
   const guides = [
     ['charterBus', 'charterBusGuide', 'charterBusText'],
     ['parking', 'parkingGuide', 'parkingText'],
+    ['subway', 'subwayGuide', 'subwayText'],
     ['publicBus', 'publicBusGuide', 'publicBusText']
   ];
 
