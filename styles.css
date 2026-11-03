@@ -832,6 +832,46 @@ a {
   justify-content: center;
 }
 
+/* ─── 교통 안내 ─── */
+
+.location__transport {
+  margin-top: 40px;
+  text-align: left;
+}
+
+.location__transport[hidden],
+.location__transport-item[hidden] {
+  display: none;
+}
+
+.location__transport-item {
+  padding: 24px 4px;
+  border-top: 1px solid var(--color-border);
+}
+
+/* 안내 제목 */
+.location__transport-item h3 {
+  font-family: var(--font-serif);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-text);
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+/* 안내 내용 */
+.location__transport-item p {
+  font-family: var(--font-serif);
+  font-size: 0.8125rem;
+  font-weight: 300;
+  line-height: 2;
+  color: var(--color-text-light);
+
+  white-space: pre-line;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
 /* ═══════════════════════════════════════════
    Account Section (축의금)
    ═══════════════════════════════════════════ */
