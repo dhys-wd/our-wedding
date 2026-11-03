@@ -43,9 +43,25 @@ const CONFIG = {
     address: "서울특별시 강남구 강남대로 262",
     tel: "02-2058-0406",
     mapLinks: {
-      kakao: "https://kko.to/Z1P06sAnjk",
-      naver: "https://naver.me/FDnCdx7B"
-    }
+  kakao: "https://kko.to/Z1P06sAnjk",
+  naver: "https://naver.me/FDnCdx7B"
+},
+
+// ── 교통 안내 ──
+transport: {
+  charterBus: {
+    content: "출발 장소: 추후 안내\n출발 시간: 추후 안내\n탑승 문의: 추후 안내"
+  },
+
+  parking: {
+    content: "주차장 위치 및 무료 주차 가능 시간은 추후 안내드립니다."
+  },
+
+  publicBus: {
+    content: "인근 버스 정류장과 이용 가능한 노선은 추후 안내드립니다."
+  }
+}
+
   },
 
   // ── 인사말 ──
