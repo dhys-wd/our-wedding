@@ -564,20 +564,50 @@
      Location Section
      ═══════════════════════════════════════════ */
 
-  function initLocation() {
-    const w = CONFIG.wedding;
-    $('#locationVenue').textContent = w.venue;
-    $('#locationHall').textContent = w.hall;
-    $('#locationAddress').textContent = w.address;
-    $('#locationTel').textContent = w.tel ? `Tel. ${w.tel}` : '';
-    $('#locationMapImg').src = 'images/location/1.jpg';
-    $('#kakaoMapBtn').href = w.mapLinks.kakao || '#';
-    $('#naverMapBtn').href = w.mapLinks.naver || '#';
+  
+function initLocation() {
+  const w = CONFIG.wedding;
 
-    $('#copyAddressBtn').addEventListener('click', () => {
-      copyToClipboard(w.address, '주소가 복사되었습니다');
-    });
+  // ── 기존 예식장 정보 ──
+  $('#locationVenue').textContent = w.venue;
+  $('#locationHall').textContent = w.hall;
+  $('#locationAddress').textContent = w.address;
+  $('#locationTel').textContent = w.tel ? `Tel. ${w.tel}` : '';
+  $('#locationMapImg').src = 'images/location/1.jpg';
+  $('#kakaoMapBtn').href = w.mapLinks.kakao || '#';
+  $('#naverMapBtn').href = w.mapLinks.naver || '#';
+
+  // 주소 복사
+  $('#copyAddressBtn').addEventListener('click', () => {
+    copyToClipboard(w.address, '주소가 복사되었습니다');
+  });
+
+  // ── 교통 안내 추가 ──
+  const transport = w.transport || {};
+
+  const guides = [
+    ['charterBus', 'charterBusGuide', 'charterBusText'],
+    ['parking', 'parkingGuide', 'parkingText'],
+    ['publicBus', 'publicBusGuide', 'publicBusText']
+  ];
+
+  let hasTransport = false;
+
+  guides.forEach(([key, guideId, textId]) => {
+    const content = transport[key]?.content;
+
+    if (typeof content === 'string' && content.trim()) {
+      $(`#${textId}`).textContent = content;
+      $(`#${guideId}`).hidden = false;
+      hasTransport = true;
+    }
+  });
+
+  // 안내 내용이 하나라도 있을 때 영역 표시
+  if (hasTransport) {
+    $('#locationTransport').hidden = false;
   }
+}
 
   /* ═══════════════════════════════════════════
      Account Section (축의금)
